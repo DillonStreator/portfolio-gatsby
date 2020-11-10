@@ -1,0 +1,143 @@
+@import "./variables.scss";
+
+.profileImg {
+    height: 250px;
+    width: 250px;
+    position: relative;
+
+    & img {
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+    }
+
+    & .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        animation-name: imageBlend;
+        animation-fill-mode: forwards;
+        animation-duration: 650ms;
+        box-shadow: inset 0 0 5px 3px $primary,
+            inset 0 0 5px 3px $primary,
+            inset 0 0 5px 3px $primary,
+            0 0 10px 10px $primary;
+    }
+}
+
+@keyframes imageBlend {
+    0% {
+        box-shadow: inset 0 0 5px 3px $primary,
+            inset 0 0 5px 3px $primary,
+            inset 0 0 5px 3px $primary,
+            0 0 0px 3px $primary;
+    }
+    75% {
+        box-shadow: inset 0 0 30px 20px $primary,
+            inset 0 0 40px 20px $primary,
+            inset 0 0 50px 20px $primary,
+            0 0 0px 3px $primary;
+    }
+    100% {
+        box-shadow: inset 0 0 20px 10px $primary,
+        inset 0 0 30px 10px $primary,
+        inset 0 0 40px 10px $primary,
+        0 0 0px 3px $primary;
+    }
+}
+
+.name {
+    font-size: 35px;
+}
+
+.title {
+    color: $accent1;
+}
+
+footer {
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+
+    & a {
+        margin-right: 15px;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        & img {
+            height: 40px;
+        }
+    }
+}
+
+.terminal {
+    margin-top: 25px;
+
+    .wrapper {
+        border-radius: 5px;
+        color: darken($textColor, 20%);
+        padding: 5px;
+        font-size: 16px;
+        font-family: monospace;
+
+        background-color: $primary;
+        box-shadow: 3px 3px 5px $primary-darker, -3px -3px 5px $primary-lighter;
+
+        & .prefix {
+            color: $purps;
+            margin-right: 5px;
+        }
+
+        &::before {
+            content: ">";
+            color: $purps;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        &::after {
+            content: "|";
+            color: $purps;
+            animation-name: cursor;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            margin-left: 3px;
+            font-weight: bold;
+        }
+    }
+
+    .cursor {
+        display: none;
+    }
+}
+
+@keyframes cursor {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 764px) {
+    .profileImg {
+        height: 200px;
+        width: 200px;
+    }
+}
+
+@media (max-height: 600px) {
+    section.cv {
+        padding: 15px;
+    }
+}
