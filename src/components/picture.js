@@ -9,19 +9,19 @@ const Picture = () => {
         relativePath: { eq: "dillon_headshot_250x250.jpg" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 250) {
-            ...GatsbyImageSharpFluid
+          fixed(width: 250) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
     }
   `)
 
-  if (!data?.placeholderImage?.childImageSharp?.fluid) {
+  if (!data?.placeholderImage?.childImageSharp?.fixed) {
     return null
   }
 
-  return <Img height={250} width={250} fluid={data.placeholderImage.childImageSharp.fluid} />
+  return <Img fixed={data.placeholderImage.childImageSharp.fixed} />
 }
 
 export default Picture

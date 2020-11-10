@@ -33,7 +33,7 @@ const socials = [
     alt: "github logo",
   },
   {
-    href: "https://stackoverflow.com/users/8765619/cranky-coder",
+    href: "https://stackoverflow.com/users/8765619/dillon",
     src: stackoverflowSvg,
     alt: "stackoverflow logo",
   },
