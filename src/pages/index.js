@@ -93,7 +93,7 @@ const IndexPage = () => (
             target="blank"
             rel="noopener noreferrer"
           >
-            <img src={src} alt={alt} />
+            <img height={40} width={40} src={src} alt={alt} />
           </a>
         ))}
       </div>
