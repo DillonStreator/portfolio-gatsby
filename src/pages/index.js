@@ -14,8 +14,6 @@ import npmSvg from "../assets/npm.svg"
 import githubSvg from "../assets/github.svg"
 import stackoverflowSvg from "../assets/stackoverflow.svg"
 
-import resumePDF from '../assets/resume.pdf'
-
 const socials = [
   {
     href: "https://www.linkedin.com/in/dillon-streator-75b01b83/",
@@ -72,7 +70,7 @@ const IndexPage = () => (
         <div className="container">
           <a
             onClick={() => trackCustomEvent({ category: "resume view" })}
-            href={resumePDF}
+            href='/resume.pdf'
             target="blank"
             rel="noopener noreferrer"
           >
